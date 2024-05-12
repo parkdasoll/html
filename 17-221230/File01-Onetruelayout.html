@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS - One True Layout</title>
+    <!-- 모든 브라우저마다 기본 스타일이 조금 차이가 있기 때문에 -->
+    <!-- 모든 브라우저에서 최대한 동일한 스타일로 보여지려면 -->
+    <!-- 기본 스타일을 제거해야한다. -->
+    <!-- 제거 한 뒤 요소의 스타일들을 직접 작성하여 -->
+    <!-- 모든 브라우저에서 동일하게 보이도록 한다. -->
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <style>
+        /* 레이아웃의 크기와 위치를 결정 */
+        #container {
+            background-color: gray;
+
+            width: 1080px;
+            margin: 0 auto;
+
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            line-height: 80px;
+        }
+
+        /* 헤더 영역 */
+        #header {background-color: #faa;}
+
+        /* 네비게이션 영역 */
+        #nav {background-color: #afa;}
+
+        /* 사이드바 + 컨텐츠 영역 */
+        #wrap {background-color: #aaf;}
+        
+        /* 사이드바 영역과 컨텐츠 영역이 float 속성이 설정되면서 */
+        /* #wrap 요소의 높이가 0 이 된다. */
+        /* 따라서 clear 속성이 설정된 가상 요소를 추가 */
+        #warp::after{content: ""; display: block ; clear: both;}
+
+        #sidebar{
+            /* 컨텐츠 영역과 나란히 배치하기 위해 */
+            /* float 속성을 설정 */
+            float: left;
+
+            /* 사이드바의 크기를 고정 */
+            width: 200px;
+            /* 컨텐츠 영역의 크기가 있다는 가정하에 높이를 설정*/
+            height: 500px;
+
+            background-color:#ffa ;
+        }  
+
+        #content {
+            background-color: #faf;
+           
+            /* 사이드바 영역과 나란히 배치하기 위해 */
+            /* float 속성을 설정 */
+            float: left;
+
+            /* #container 요소의 크기와 #sidebar 요소의 크기가 고정이기 때문에 */
+            /* #content 요소의 크기도 고정 */
+            width: 880px;
+
+            /* 컨텐츠 영역의 크기가 있다는 가정하에 높이를 설정 */
+            height: 500px;
+        }
+
+        #footer {
+            background-color: #aff;
+        }
+        </style>
+</head>
+<body>
+    <!-- 고정 폭 레이아웃(One True Layout) -->
+    <!--  - 레이아웃의 폭이 고정되며, 브라우저 중앙에 배치되는 레이아웃 -->
+    <!--  - 레이아웃 내의 구성들의 크기가 고정 -->
+
+    <!-- 레이아웃의 모든 구성들을 포함하는 요소 -->
+    <!--  - 레이아웃의 크기와 위치를 결정 -->
+    <div id="container">
+        <!-- 헤더 영역 -->
+        <header id="header">Navigation</header>
+
+        <!-- 네비게이션 영영 -->
+        <nav id="nav">navigation</nav>
+        <!-- 사이드바 + 컨텐츠 영역 -->
+        <div id="wrap">
+            <!-- 사이드바 영역 -->
+            <aside id="sidebar">Sidebar</aside>
+            <!-- 컨텐츠 영역 -->
+            <article id="content">Content</article>
+        </div>
+
+        <!-- 푸터 영역 -->
+        <footer id="footer">Footer</footer>
+    </div>
+</body>
+</html>

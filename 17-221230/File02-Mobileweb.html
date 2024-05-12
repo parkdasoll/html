@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  → 뷰포트의 너비를 디바이스 기기의 크기만큼 설정 -->
+    <!--  → 초기 배율을 1 배율로 설정 -->
+    <title>HTML - Mobile Web</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <style>
+        body > * {
+            height: 80px;
+
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            line-height: 80px;
+        }
+
+        #header {background-color: #faa; position: relative;}
+        #header > #side-open {
+            /* button 의 기본 스타일 제거 */
+            background-color: transparent;
+            outline: none;
+            border: none;
+            padding: 0;
+
+            /* 아이콘의 크기 */
+            width: 40px;
+            height: 40px;
+
+            /* #header 요소의 영역을 기준으로 좌측 중앙에 배치 */
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            margin-top: -20px;
+
+            /* 아이콘 설정 */
+            background: url(../../images/mune-black-24dp/2x/outline_menu_black_24dp.png) center /cover no-repeat;
+            /* 마우스 포인터의 모양 설정 */
+            cursor: pointer;
+        }
+
+        button > span {display: none;}
+
+        #nav {background-color: #afa;}
+        #sidebar { background-color: #aaf;}
+        #sidebar {
+            width: 80%;
+            height: auto;
+            position: absolute;
+            top: 80px; bottom: 0;
+            left: 0;
+
+            /* 사이드바는 기본적으로 보여지지 않은 상태여야하기 때문에 */
+            /* 화면에 보이지 않도록 숨겨야한다. */
+            /* display: none; */
+            left: -80%;
+
+        }
+        #content { background-color: #faf; height: 500px;}
+        #footer { background-color: #ffa;}
+    </style>
+</head>
+<body>
+    <header id="header">Header
+        <button id="side-open"><span>side bar open</span></button>
+    </header>
+    <nav id="nav">Navigation</nav>
+    <aside id="sidebar">Sidebar</aside>
+    <article id="content">Content</article>
+    <footer id="footer">Footer</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example01 - Fluid Lay Out</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <style>
+        #header > h1 {
+            font-size: 2.4em;
+            font-weight: bold;
+            text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+            margin: 1em;
+        }
+        #nav {
+            background-color: #333;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+        }
+        #nav::after{content: "";display: block; clear: both;}
+        #nav > ul.nav-service {float: left;}
+        #nav > ul.nav-auth {float: right;}
+        #nav > ul > li {float: left;}
+        #nav > ul > li > a {
+            /* 클릭할 수 있는 버튼처럼 사용하기 위해 */
+            /* block 형식으로 설정 */
+            display: block;
+            padding: 1.2em 2em;
+
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #nav > ul > li > a:hover {
+            background-color: yellowgreen;
+            color: navy;
+        }
+        #wrap-container{
+            /* 영역을 벗어난 부분을 숨김으로써 스크롤 바가 생기지 않도록 한다. */
+            /*  + float 인 요소들을 컨텐츠로 인식하여 높이가 잡히게 된다. */
+            overflow: hidden;
+        }
+        #sidebar {
+            float: left;
+            width: 200px;
+        }
+        #sidebar > ul > li > a {
+            display: block;
+            padding: 1em;
+
+            text-decoration: none;
+            color: black;
+        }
+        #sidebar > ul > li > a:hover {
+            background-color: #999;
+        }
+        #wrap {
+            /* #sidebar 요소와 나란히 배치 */
+            float: left;
+            /* 상위 요소의 너비 100%만큼 설정 */
+            /* 상위 요소의 너비 = 뷰포트의 너비 */
+            width: 100%;
+
+            /* #sidebar 요소와 나란히 배치되기에는 상위 요소의 남은 공간이 */
+            /* 적기 때문에 부족한 만큼(사이드바의 너비) 사이드 바의 반대 방향으로 이동 */
+            margin-right: -200px;
+        }
+
+        #content {
+            /* #wrap 요소가 #sidebar 요소와 나란히 배치되면서 */
+            /* 해당 컨텐츠도 바깥으로 벗어나게 된다. */
+            /* 화면에 온전히 보여지도록 외부 여백을 설정 */
+            padding: 1em;
+            border-left: 1px solid #999 ;
+            margin-right: 200px;
+        }
+        #content > h2 {
+            font-size: 1.6em;
+            font-weight: bold;
+            margin-bottom: 0.5em;
+        }
+        #content > p {
+        line-height: 1.6;
+        }
+        #content > p:not(:last-child) {margin-bottom: 1em;}
+        #footer {
+            height: 100px;
+            border-top: 1px solid #999;
+            position: relative;
+        }
+        #footer > .copyright {
+            /* #footer 요소의 영역을 기준으로 중앙 하단에 배치 */
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            text-align: center;
+            width: 100%;
+            /* 현재 요소의 너비 50% 만큼 왼쪽으로 이동 */
+            /* left: 50%; */
+            /* transform: translateX(-50%); */
+            /* background-color: #999; */
+        }
+    </style>
+</head>
+<body>
+    <Header id="header">
+        <h1>Fluid Layout</h1>
+    </Header>
+
+    <nav id="nav">
+        <ul class="nav-service">
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#HTML">HTML</a></li>
+            <li><a href="#CSS">CSS</a></li>
+            <li><a href="#JavaScript">JavaScript</a></li>
+            <li><a href="#jQuery">jQuery</a></li>
+        </ul>
+
+        <ul class="nav-auth">
+            <li><a href="#lohin">Log in</a></li>
+            <li><a href="#signup">sign up</a></li>
+        </ul>
+    </nav>
+
+    <div id="wrap-container">
+        <aside id="sidebar">
+            <ul>
+                <li><a href="#tutorial">Tutorial</a></li>
+                <li><a href="#Reference">Reference</a></li>
+                <li><a href="#Example">Example</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </aside>
+
+        <!-- 뷰포트의 너비만큼 크기를 차지하는 요소를 추가 -->
+        <div id="wrap">
+            <article id="content">
+                <h2>What is Lorem Ipsum?</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac lacus a est aliquam molestie. Mauris ac accumsan
+                    purus, vitae accumsan tortor. Donec in massa convallis, ultricies nulla a, pellentesque est. Curabitur sed tortor in
+                    sem efficitur semper vel ornare leo. Mauris ultrices tellus sit amet elit volutpat gravida. Suspendisse finibus
+                    rhoncus diam, in viverra risus. Donec imperdiet placerat facilisis. Curabitur ut iaculis lorem, eu dapibus orci. Sed
+                    consectetur porta scelerisque. Suspendisse eu suscipit urna, quis scelerisque diam. Nam a maximus dolor.
+                    Pellentesque a ante ut odio ullamcorper eleifend ultrices varius est. Fusce commodo posuere sapien. Proin pharetra
+                    ultrices orci sit amet malesuada. Suspendisse iaculis diam sed aliquet aliquet.
+                    </p>
+
+                <p>Etiam vitae magna eget urna maximus molestie. Sed elementum, sem in blandit pulvinar, dolor elit pretium eros, eu
+                    tincidunt nisl elit et erat. Phasellus non ligula scelerisque, ultrices velit in, vulputate ex. Etiam vel est
+                    ultricies odio luctus vestibulum. Nullam convallis, justo id pharetra dapibus, turpis mauris finibus urna, eleifend
+                    eleifend dui sapien in erat. Nam fermentum massa sit amet iaculis luctus. Fusce dui leo, vehicula in tristique nec,
+                    accumsan non justo. Maecenas euismod, tortor ut sollicitudin tincidunt, est tortor vulputate arcu, sit amet ornare
+                    velit diam at odio. Nulla at mi risus. Nam accumsan nulla ex, quis ultrices massa accumsan et. Morbi lectus felis,
+                    porttitor sit amet tempus ut, imperdiet sit amet lorem.
+                    </p>
+                
+                <p>Proin vitae semper ligula, eu pulvinar nibh. Pellentesque massa nibh, pharetra eu nisl quis, finibus vulputate elit.
+                    In imperdiet ipsum id pretium fringilla. Sed tempor risus arcu, in dignissim mi lobortis ac. Aenean dignissim nulla
+                    in sapien condimentum luctus. Fusce ac convallis est. Mauris non dolor dictum, bibendum turpis sit amet, tempus
+                    purus.
+                    </p>
+            </article>
+        </div> <!-- /#wrap -->
+    </div> <!-- /#wrap-container -->
+
+    <footer id="footer">
+        <div class="copyright"> &copy; 2022-2023 SBS Academy Gwangju </div>
+    </footer>
+</body>
+
+</html>

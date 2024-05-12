@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS - animation property</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <style>
+        #container {
+            width: 400px;
+            height: 400px;
+            border: 10px solid black;
+            margin: 20px auto;
+            position: relative;
+        }
+        #container > div {
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+
+            /* 효과 적용 */
+            animation-name: effect;
+            /* 진행 시간 */
+            animation-duration: 2000ms;
+            /* 반복 횟수 */
+            animation-iteration-count: 3;
+            animation-iteration-count: infinite;
+            /* 진행 방향 */
+            animation-direction: normal;
+            animation-direction: alternate;
+            /* 속도 함수 */
+            animation-timing-function: linear;
+            /* 진행 상태 */
+            animation-play-state: paused;
+            animation-play-state: running;
+        }
+        #container:hover > div {
+            animation-play-state: running;
+            animation-play-state: paused;
+        }
+        /* 애니메이션 효과를 만들기 위한 at-rule */
+        /*  - 0% ~ 100% 의 진행도 */
+        @keyframes effect {
+            
+            from {          /* 0% { } */ 
+                left: 0;
+                top: 0;
+                background-color: navy;
+            }
+
+            33.33% { 
+                /* 중간 키프레임을 통해 스타일을 다른 스타일 값으로 */
+                /* 설정할 수 있으며, 만약 값을 유지해야하는 경우 */
+                /* 동일한 값으로 지정해야한다. */
+                top: 0;
+                left: 200px;
+            }
+
+            66.67% { 
+                left: 200px;
+                top: 200px;
+                background-color: orange;
+            }
+
+            
+            to {            /* 100% { } */ 
+                /* 이전 키프레임에서 설정된 값을 to{} 블록에서 */
+                /* 지정하지 않으면 초기 값으로 변화된다. */
+                /*  - 요소에 설정된 스타일 속성 값으로 변화된다. */
+                top: 200px;
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div></div>
+    </div>
+</body>
+</html>

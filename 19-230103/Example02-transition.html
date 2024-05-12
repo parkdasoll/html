@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example02 - transition</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <style>
+        body {
+            background-color: gray;
+        }
+        #box {
+            width: 300px;
+            height: 300px;
+            margin: 20px auto;
+            border-radius: 50%;
+            
+        }
+        #box > div {
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            margin: 20px auto;
+            background-color: blue;
+        }
+        #box > div > .box2 {
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            margin: 20px auto;
+            background-color: yellowgreen;
+            transition-duration: 2s;
+        }
+        #box:hover > div > .box2 {
+            transform: scale(0,0);
+        }
+
+        #box > div {transition-timing-function: ease-in-out;}
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="box1">
+            <div class="box2"></div>
+        </div>
+    </div>
+</body>
+</html>

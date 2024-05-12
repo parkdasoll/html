@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example01 - Onetrue Layout</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <style>
+        #container {
+            width: 1080px;
+            margin: 0 auto;
+        }
+        #header {
+            height: 100px;
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 4px 4px 4px gray;
+            line-height: 100px;
+            margin-left: 30px;
+        }
+
+        #nav {
+            background-color: rgb(49, 48, 48);
+            box-shadow: 3px 3px 3px gray;
+        }
+        #nav > li {
+            float: left;
+        }
+        #nav > ul > li {
+            float: right;
+        }
+        #nav::after {content: ""; display: block; clear: both;}
+        #nav > li > a {
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        #nav > ul > li > a {
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        #nav > li:hover{ background-color: yellowgreen;}
+        #nav > ul > li:hover{ background-color: yellowgreen;}
+        #wrap::after{content: ""; display: block; clear: both;}
+        #sidebar {
+            float: left;
+            width: 200px;
+            height: max-content;
+        }
+        #sidebar > ul > li > a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: 1.5em;
+        }
+        #sidebar > ul > li > a:hover{background-color: gray;}
+        #content {
+            float: left;
+            width: 880px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #content > span {
+            font-weight: bold;
+            font-size: 2em;
+            line-height: 60px;
+        }
+        #content > p {
+            line-height: 25px;
+        }
+
+        #footer {
+            background-color: rgb(49, 48, 48);
+            height: 80px;
+            color: white;
+            text-align: end;
+            line-height: 80px;
+            padding-right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header id="header">One True Layout</header>
+        <ul id="nav">
+                <li><a href="Home">Home</a></li>
+                <li><a href="HTML">HTML</a></li>
+                <li><a href="CSS">CSS</a></li>
+                <li><a href="JavaScript">JavaScript</a></li>
+                <li><a href="jQuery">jQuery</a></li>
+                <ul>
+                    <li><a href="Sign up">Sign up</a></li>
+                    <li><a href="Log in">Log in</a></li>
+                </ul>
+        </ul>
+        <div id="wrap">
+            <aside id="sidebar">
+                <ul>
+                    <li><a href="Home1">Home</a></li>
+                    <li><a href="HTML1">HTML</a></li>
+                    <li><a href="CSS1">CSS</a></li>
+                    <li><a href="JavaScript1">JavaScript</a></li>
+                    <li><a href="jQuery1">jQuery</a></li>
+                </ul>
+            </aside>
+            <article id="content">
+                <span>What is Lorem Ipsum?</span><br>
+                <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+                    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                    voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+                    sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
+                    veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
+                    autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem
+                    eum fugiat quo voluptas nulla pariatur?
+                </p>
+                <br>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <br>
+                <p>
+                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
+                    quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia
+                    deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam
+                    libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere
+                    possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut
+                    rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic
+                    tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus
+                    asperiores repellat.
+                </p>
+            </article>
+        </div>
+        <footer id="footer">&copy; 2022 SBS Academy Gwangju</footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - Fluid Layout</title>
+    <link rel="stylesheet" href="../../CSS/reset.css">
+    <style>
+        body{
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            line-height: 2.5;
+        }
+        #header { background-color: #faa;}
+        #nav { background-color: #afa;}
+        #sidebar{background-color: #aaf;height: 500px}
+        #content{background-color: #ffa; height: 500px;}
+        #footer{ background-color: #faf;}
+
+        /* --------------------------------------------------------- */
+        /* 가변 폭 레이아웃(Fluid Layout) */
+        /*  - 뷰포트 전체를 차지하며, */
+        /*    뷰포트의 크기에 따라 본문 영역의 크기가 변하는 레이아웃 */
+        #sidebar{
+            float: left;
+            width: 200px;
+            
+        }
+        #content {
+            float: left;
+            /* width: 100% - 200%; */
+            /* 기본적으로 위와 같은 연산을 할 수 없다. */
+
+            width: calc(100% - 200px);
+            /* 위의 같은 식을 연산하기 위한 calc() 함수가 있다. */
+            /* 단, 해당 함수를 지원하지 않는 브라우저 또는 버전이 있을 수 있다. */
+        }
+    </style>
+</head>
+<body>
+    <header id="header">Header</header>
+    <nav id="nav">Navigation</nav>
+    <div id="wrap-container">
+        <aside id="sidebar">Side Bar</aside>
+        <article id="content">Content</article>
+    </div>
+    <footer id="footer">Footer</footer>
+</body>
+</html>
