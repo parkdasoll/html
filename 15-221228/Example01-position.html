@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Example01 - Position property</title>
+    <link rel="stylesheet" href="../../CSS/style.css">
+    <style>
+        #container {
+            width: 90%;
+            height: 800px;
+            border: 3px solid green;
+            background-color: #efe;
+            margin: 20px auto;
+            
+            /* 하위 요소들의 기준 영역으로 지정하기 위해 */
+            /* position 속성의 값을 'relative'로 지정 */
+            position: relative;
+        }
+
+            /* #container 요소 내의 div 요소들의 공통 스타일 */
+        #container > div {
+            width: 200px;
+            height: 100px;
+            border: 3px solid red;
+            background-color: #fee;
+
+            font-size: 2.4em;
+            text-align: center;
+            line-height: 100px;
+            box-sizing: border-box;
+
+            margin: 10px;
+
+            /* #container 요소의 영역을 기준으로 각 위치에 배치 */
+            position: absolute;
+        }
+
+        #container > div:nth-child(1) {
+            top: 0;
+            left: 0;
+        }
+        #container > div:nth-child(2) {
+            top: 0;
+            right: 0;
+        }
+        #container > div:nth-child(3) {
+            top: 50%;
+            left: 50%;
+            margin: 0;
+            margin-top: -50px;
+            margin-left: -100px;
+        }
+        #container > div:nth-child(4) {
+            bottom: 0;
+            left: 0;
+        }
+        #container > div:nth-child(5) {
+            bottom: 0;
+            right: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>BOX 1</div>
+        <div>BOX 2</div>
+        <div>BOX 3</div>
+        <div>BOX 4</div>
+        <div>BOX 5</div>
+    </div>
+</body>
+</html>

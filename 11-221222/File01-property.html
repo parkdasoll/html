@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>File01 - property</title>
+
+    <style>
+        #container1 {
+            background-color: yellowgreen;
+
+            /* 요소의 컨텐츠 영역의 너비 */
+            width: 300px;
+
+            /* 요소의 컨텐츠 영역의 높이 */
+            height: 300px;
+
+            /* 요소의 내부 여백 = 요소의 테두리와 컨텐츠 사이의 여백 */
+            padding: 20px;
+
+            /* 요소의 외부 여백 = 요소의 테두리 바깥 여백 */
+            margin: 30px;
+            margin: 30px auto;
+        }
+
+        #container1 > div {
+            background-color: blueviolet;
+
+            /* 상위 요소인 #container1 요소의 */
+            /* 컨텐츠 영역의 너비 100% 만큼 설정  */
+            width: 100%;
+
+            /* 상위 요소인 #container1 요소의 */
+            /* 컨텐츠 영역의 높이 100% 만큼 설정  */
+            height: 100%;
+
+
+            /* 실제 화면에 보여지는 요소의 크기 */
+            /*  = 컨텐츠 영역의 크기 + 내부 여백 + 테두리 */
+            padding: 20px;
+
+            /* 테두리까지의 영역이 상위 요소의 컨텐츠 영역에 모두 들어올 수 있도록 */
+            /* 컨텐츠 영역의 크기를 다시 계산하여 설정해야한다. */
+
+            /* 컨텐츠 영역의 크기 */
+            /*  = 전체 크기 - padding*2 - border*2 */
+            /*  = 전체 크기 - (padding + border)*2 */
+            /*  = 300px - (20px + 0)*2 */
+            /*  = 300px - 40px */
+            /*  = 260px */
+            width: 260px;
+            height: 260px;
+            /* → 하나의 영역의 크기가 바뀌면 컨텐츠 영역의 크기를 */
+            /*   다시 계산하여 설정해야 한다. */
+
+            /* 위의 문제를 해결하기 위한 속성이 'box-sizing' 속성이다. */
+
+            /* box-sizing 속성 */
+            /*  - width 속성과 height 속성의 값 설정 범위를 지정하는 속성 */
+            /*  - 속성 값 */
+            /*      - content-box */
+            /*          : 설정된 크기 값을 컨텐츠 영역의 크기로 설정, 기본 값 */
+            /*      - border-box */
+            /*          : 설정된 크기 값을 테두리까지의 크기로 설정 */
+            /*          : 테두리와 내부 여백은 고정이고, 컨텐츠 영역의 크기는 */
+            /*            자동으로 계산되어 설정된다. */
+
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+            box-sizing: border-box;
+
+        }
+        /* --------------------------------------------------------------------- */
+        #box1 {
+            background-color: #ffcccc;
+            width: 400px;
+            height: 400px;
+            /* ---------------------------------------------------------------- */
+            /* 테두리 관련 속성 */
+            /*  - border */
+            /*      : 테두리의 두께, 종류, 색상 */
+            /*  - border - width */
+            /*      : 테두리의 두께 */
+            /*  - border - style */
+            /*      : 테두리의 종류 */
+            /*  - border - color */
+            /*      : 테두리의 색상 */
+            /*  - border-radius */
+            /*      : 요소의 모서리 */
+
+            color: red;
+            /* 테두리의 스타일 */
+            border-style: solid; /* 실선 */
+            border-style: dotted; /* 점선 */
+            border-style: dashed; /* 짧은 선 */
+            border-style: double; /* 이중 선 */
+            border-style: inset; 
+            border-style: outset; 
+            border-style: groove; 
+            border-style: ridge; 
+
+            /* 테두리의 두께 */
+            border-width: 20px;
+
+            /* 테두리의 색상 */
+            /* - 기본 색상 = 폰트 색상(color 속성) */
+            border-color: blueviolet;
+
+            /* 테두리 */
+            border: 10px solid navy;
+
+            /* 요소의 모서리 */
+            border-radius: 20px;
+            /* → 모든 방향 */
+            border-radius: 20px 50px;
+            /* → 좌상우하 20px, 좌하우상 50px */
+            border-radius: 20px 40px 60px 80px;
+            /* → 좌상단부터 시계방향 순으로 설정 */
+
+            /* 같은 축의 속성 값이 서로 오버된 경우 */
+            /* 요소 크기의 반절만큼 설정된다. */
+            border-radius: 350px;
+            border-radius: 50%;
+            /* 백분율 : 현재 요소 크기를 기준 */
+
+            border-radius: 70% 30%;
+            border-radius: 70% 0%;
+        }
+
+        #box2 {
+            width: 0px;
+            height: 0px;
+            margin: 0 auto;
+
+            border: 300px solid blueviolet;
+            border-right-color: orange;
+            border-left-color: skyblue;
+            border-bottom-color: yellowgreen;
+
+            /* 하단 테두리를 제거 */
+            /* border-bottom: none; */
+            /* border-right: none; */
+
+            /* 컨텐츠 영역의 크기가 0 이면 */
+            /* 테두리를 통해서 삼각형 모양을 만들수 있다. */
+            width: 0;
+            height: 0;
+            /* 삼각형으로 사용할 테두리를 제외한 */
+            /* 다른 테두리의 색상을 투명(transparent)으로 설정 */
+            border-right-color: transparent ;
+            border-left-color: transparent ;
+            border-top-color: transparent ;
+
+            border: 300px solid transparent;
+            border-bottom-color: blueviolet;
+            border-right-color: blueviolet;
+        }
+
+        #box3, #box4 {
+            width: 400px;
+            height: 400px;
+            margin: 20px auto;
+            background-color: skyblue;
+        }
+        #box3 > div {
+            width: 0;
+            height: 0;
+            border: 30px solid white;
+            border-bottom-color: green;
+            border-right-color: green;
+            border-bottom-color: rgba(0, 0, 0, 0.4);
+            border-right-color: rgba(0, 0, 0, 0.4);
+        }
+
+        #box4::before{
+            content: "";
+            /* 크기를 가질 수 있도록 블록 형식으로 설정 */
+            display: block;
+            width: 0;
+            height: 0;
+            border: 30px solid white;
+            border-bottom-color: rgba(0, 0, 0, 0.4);
+            border-right-color: rgba(0, 0, 0, 0.4);
+
+        }
+    </style>
+</head>
+<body>
+    <div id="container1">
+        <div>BOX</div>
+    </div>
+    
+    <div id="box1"></div>
+    <hr>
+    <div id="box2"></div>
+    <hr>
+    <div id="box3">
+        <div></div>
+    </div>
+    <hr>
+    <div id="box4"></div>
+</body>
+</html>

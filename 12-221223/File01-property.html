@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS - Style Property</title>
+    <style>
+
+        /* 브라우저 화면에 이미지를 출력하는 방식 */
+        /*  1. img 태그 */
+        /*      - 사용자에게 이미지 형식의 컨텐츠(내용)을 제공하기 위해 사용 */
+        /*  2. background 속성 */
+        /* 요소를 꾸미기 위한 배경을 설정하기 위해 사용 */
+
+        #container1 {
+            width: 800px;
+            height: 600px;
+            margin: 20px auto;
+            border: 5px solid navy;
+            /* ----------------------------------------------------------- */
+
+            /* 배경 관련 속성 */
+            /*  - background 속성 */
+            /*      : 배경과 관련된 속성들을 한 번에 설정 */
+            /* - background-image 속성 */
+            /*      : 요소의 배경 이미지 */
+            /*  - background-position 속성 */
+            /*      : 요소의 배경 위치 */
+            /*  - background-size 속성 */
+            /*      : 요소의 배경 이미지 크기 */
+            /*      : background 속성으로 지정 시, 값 앞에 '/' 를 붙여야 한다. */
+            /*  - background-refeat 속성 */
+            /*      : 요소의 배경 이미지의 반복 패턴 */
+            /*  - background-attachment 속성 */
+            /*      : 요소의 배경 이미지 부착 방식 */
+            /*  - background-color 속성 */
+            /*      : 요소의 배경색 */
+            /* ---------------------------------------------------------------- */
+            /* 배경 색 */
+            background-color: skyblue;
+
+            /* 배경 이미지 */
+            background-image: url(../../images/apple.jpg);
+
+            /* 배경의 반복 패턴  */
+            background-repeat: repeat; /* 기본 값 */
+            background-repeat: repeat-x; 
+            background-repeat: repeat-y; 
+            background-repeat: no-repeat;
+        
+            /* 배경 이미지의 위치 */
+            /*  - 웹 페이지 상의 좌표는 오른쪽과 아래쪽으로 갈 수록 */
+            /*    값이 커진다. */
+            background-position: 50px 10px;
+            background-position: 50px -50px;
+            background-position: right center;
+            background-position: center bottom;
+            background-position: center; /* = center center */
+            
+            /* 배경 이미지의 크기 */
+            /*  - 요소의 너비를 지정하면, 높이는 해상도에 맞춰 자동으로 설정 */
+            background-size: 100px;
+            background-size: 100px 300px;
+            background-size: contain;
+            /*  = 요소 안에서 최대한 크게 포함되도록 확대/축소 */
+            background-size: cover;
+            /*  = 요소의 빈 공간 없이 최대한 크게 확대/축소 */
+            background-size: auto;
+            /*  = 이미지의 원본 크기 */
+            
+            /* 배경 이미지의 부착 방식 */
+            background-attachment: scroll;
+            /*  = 요소에 부착되며, 요소와 같이 스크롤된다. */
+
+            background-position: center; 
+            background-attachment: fixed;
+            /*  = 화면(브라우저)에 부착되며, 위치가 고정된다. */
+            /*  = 해당 요소의 영역에서만 보여진다. */
+
+            background: url(../../images/apple.jpg) center /contain no-repeat scroll orange;
+                        
+        }
+        
+        /* 글자 폰트 관련 속성 */
+        /*  - font 속성 */
+        /*      : 글자 관련 속성들을 한 번에 설정 */
+        /*  - font-style 속성 */
+        /*      : 글자의 기울기 */
+        /*  - font-variant 속성 */
+        /*      : 소문자를 작은 대문자로 변환 */
+        /*  - font-weight 속성 */
+        /*      : 글자의 두께 */
+        /*  - font-size 속성 */
+        /*      : 글자의 크기, 필수 */
+        /*  - line-height 속성 */
+        /*      : 행(줄) 높이 */
+        /*  - font-family 속성 */
+        /*      : 폰트 종류 */
+
+        /* -------------------------------------------------------- */
+        body{height: 3000px;}
+    </style>
+</head>
+<body>
+    <h2>background 속성</h2>
+    <div id="container1"></div>
+</body>
+</html>
