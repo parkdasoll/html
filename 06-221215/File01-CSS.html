@@ -1,0 +1,52 @@
+<!-- ctrl + space : 자동완성 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS - cascading Style Sheet</title>
+
+    <!-- 외부 스타일 시트 -->
+    <!--  - HTML 문서 외부에서 작성된 스타일 시트(.css)를 불러오는 방식 -->
+    <!--  - 여러 HTML 문서에서 사용할 스타일 시트인 경우 사용 -->
+    <!--  - 여러 CSS 파일을 불러올 경우 나중에 추가된 파일이 -->
+    <!--    우선 순위가 높다. -->
+    <link rel="stylesheet" href="../../CSS/dark.css">
+
+    <!-- 내부 스타일 시트 -->
+    <!--  - HTML 문서 내부에서 스타일 시트를 작성하는 방식 -->
+    <!--  - 해당 HTML 문서에서만 사용할 시트인 경우 사용 -->
+    <style>
+        /* CSS 를 통해 스타일 시트를 작성하기 위한 영역 */
+
+        /* h1 요소의 글자 색상을 노란색으로 설정 */
+        /* 1. 스타일을 설정할  요소를 선택(지정) */
+        /* 2. 선택된 요소에 설정할 CSS 블록({,})을 작성 */
+        /* 3. 선택된 요소에 설정할 스타일 속성과 값을 작성 */
+        h1{
+            /* 글자 색 */
+            color: yellow;
+        }
+
+        h2{
+            /* tgba(RED, GREEN, BLUE, ALPHA) */
+            /*  - ALPHA : 투명도(0 ~ 1) */
+            /*               - 0 : 투명 */
+            /*               - 1 : 불투명 */
+            color: rgba(210, 20, 20, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello HTML!</h1>
+    <h1>Hello CSS!!</h1>
+
+    <!-- 인라인 스타일 -->
+    <!--  - 스타일 시트를 작성하지 않고 -->
+    <!--    HTML 요소에 직접적으로 스타일을 지정하는 방식 -->
+    <!--  - HTML 요소의 style 속성을 통해 스타일을 설정 -->
+    <h2 style="color: white;"> CSS - Cascading Style Sheet</h2>
+    <h2>Wonderful Day!</h2>
+    <hr>
+    <h2>Beautiful Day!</h2>
+</body>
+</html>

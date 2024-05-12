@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Example01 - Tag</title>
+    </head>
+
+    <body>
+        <h2>회원 가입</h2>
+        <!-- 회원 가입을 할 때 필요한 정보를 입력 받기 위한 입력 양식 -->
+        <form action="server/singup.jsp" method="post">
+            <!-- 입력 요소들을 격자 형식의 틀로 배치하기 위해 -->
+            <!-- 테이블 관력 태그를 이용 -->
+            <table>
+                <!-- 표를 만들기 위한 것이 아닌 격자 형식의 틀을 -->
+                <!-- 만들기 위함이기 때문에 제목 영역(thead)는 만들지 않는다. -->
+                <tbody>
+                    <!-- ID 입력 -->
+                    <tr>
+                        <!-- label 태그를 통해 텍스트와 입력 요소를 하나로 연결시킨다. -->
+                        <!--  - label 태그의 for 속성에 연결할 입력 요소의 id 속성 값을 지정 -->
+                        <td><label for="account">ID</label></td>
+                        <td><input type="text" id="account" name="account" autocomplete="off" placeholder="ID" required autofocus></td>
+                    </tr>
+                    <!-- Password 입력 -->
+                    <tr>
+                        <td><label for="password">PW</label></td>
+                        <td><input type="password" id="password" name="password" placeholder="password" required></td>
+                    </tr>
+                    <!-- 이름 입력 -->
+                    <tr>
+                        <td><label for="name">이름</label></td>
+                        <td><input type="text" id="name" placeholder="Name" autocomplete="off"></td>
+                    </tr>
+                    <!-- 성별 입력 -->
+                    <tr>
+                        <td><label>성별</label></td>
+                        <td>
+                            <!-- type: radio -->
+                            <!--  - 다수의 항목 중 하나를 선택해야하는 경우에 사용 -->
+                            <!--  - name 속성의 값을 동일하게 설정하고 -->
+                            <!--    서버에 전달될 값(value)을 지정을 해줘야한다. -->
+                           <label> 남자<input type="radio" name="gender" value="male" checked> </label>
+                           <label> 여자<input type="radio" name="gender" value="female"> </label>
+                        </td>
+                    </tr>
+
+                    <!-- 자기 소개 입력 -->
+                    <tr> <td>자기 소개</td> </tr>
+                    <tr>
+                        <td colspan="2">
+                            <textarea name="selfIntrodcution" cols="33" rows="7" style="resize: none;"></textarea>
+                        </td>
+                    </tr>
+                    <!-- 완료 버튼 -->
+                    <tr><td><button type="submit">완료</button></td></tr>
+                </tbody>
+            </table>
+
+        </form>
+    </body>
+</html>

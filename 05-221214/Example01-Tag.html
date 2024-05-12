@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Example Tag</title>
+    </head>
+
+    <body>
+        <h2>회원 가입</h2>
+        <form action="/server/index.jsp" method="post"></form>
+        
+        <table>
+            
+            <tbody>
+
+                <tr>
+                    <td>ID</td>
+                    <td><input type="text" name="ID" placeholder="Your ID"></td>
+                </tr>
+                <tr>
+                    <td>PW</td>
+                    <td><input type="password" name="password" placeholder="Your Password"></td>
+                </tr>
+                <tr>
+                    <td>이름</td>
+                    <td><input type="text" name="name" placeholder="Your name"></td>
+                </tr>
+                <tr>
+                    <td>성별</td>
+                    <td><label>남자&nbsp;<input type="radio" name="sex" value="M" checked></label><label>&nbsp;여자&nbsp;<input type="radio" name="sex" value="W"></label></td>
+                </tr>
+                <tr>
+                    <td>자기 소개</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><textarea cols="33" rows="7" style="resize: none;"></textarea></td>
+                </tr>
+                <tr>
+                    <td><button>완료</button> </td>
+                </tr>
+            
+            </tbody>
+        </table>
+        </form>
+
+    </body>
+</html>
