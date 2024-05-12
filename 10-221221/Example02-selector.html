@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Example02 - selector</title>
+    <style>
+        /* #list 요소 내의 마우스 포인터가 올라간 li 요소의 */
+        /* 마지막 영역에 컨텐츠를 추가 */
+        #list > li:hover::after{
+            content: "★"; 
+            color: gold; 
+            background-color: black; 
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li>H1</li>
+        <li>H2</li>
+        <li>H3</li>
+        <li>H4</li>
+        <li>H5</li>
+        <li>H6</li>
+        <li>H7</li>
+        <li>H8</li>
+        <li>H9</li>
+        <li>H10</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS - Property</title>
+    <style>
+        /* HTML 속성(Attribute) */
+        /* ------------------------------------- */
+        /* CSS 스타일 속성(Style Property) */
+        /*  - CSS 스타일 속성에는 '스타일 상속' 특성이 있다. */
+        /*      : 상위 요소의 스타일 속성 값을 하위 요소에 동일하게 설정하는 것 */
+        /*      : 글자 관련 속성(color, font, ... )은 기본적으로 상속된다. */
+        /*      : 그 외인 경우에는 'inherit' 속성 값을 통해 상속받을 수 있다. */
+        /*        - 배경색(background-color)은 상속되는 것이 아니라 */
+        /*          기본 배경 색상이 투명(transparent)이기 때문에 비춰보일 뿐이다. */
+
+        /* 가시성과 관련된 속성 */
+        /* - display */
+        /*      : 요소가 화면에 표시되는 방식을 설정하는 속성 */
+        /* - visibility */
+        /*      : 요소가 화면에 보이기 or 숨기기를 설정하는 속성 */
+        /* - opacity */
+        /*      : 요소의 투명도를 설정하는 속성 */
+        #header1 {
+            background-color: gold;
+
+            display: block;
+            /*  : 블록처럼 차례대로 쌓는 형식 */
+            /*  : 크기, 위치, 여백 설정이 가능 */
+
+            display: inline;
+            /*  : 글자처럼 한 행에 나열되는 형식 */
+            /*  : 크기, 위치, 상하 외부 여백이 설정 불가능 */
+            /*  : 좌우 여백만 가능 */
+
+            display: inline-block;
+            /*  : 기본적으로 inline 형식이며, block 형식의 특성을 가진다. */
+            /*  : 글자처럼 다뤄지기 때문에 한 행에 나열되며, */
+            /*    위치는 설정이 불가능하다. */
+            /*  : block 형식의 특성으로 크기, 여백은 설정이 가능하다. */
+
+            display: none;
+            /*  - none : '아무 값도 설정하지 않는다.' 를 의미 */
+            /*  : 요소가 화면에 표시되는 형식이 없다. */
+            /*  → 화면에 표시되는 형식이 없기 때문에 영역 또한 없다. */
+        }
+
+        #display:hover + #header1 { display: block;}
+
+        #header2 {
+            visibility: visible;
+            /* 요소가 화면에 보이도록 한다. */
+
+            visibility: hidden;
+            /* 요소가 화면에서 숨겨지도록 한다. */
+            /* 화면에서 숨겨질 뿐 완전히 사라지는 것은 아니기 때문에 */
+            /* 원래 영역을 그대로 차지한다. */
+        }
+
+        #header3 {
+            opacity: 1;
+            /* 완전 불투명 */
+
+            opacity: 0;
+            /* 투명 */
+            /*  = 요소를 단순히 투명하게만 만들 뿐 */
+            /*    사라지거나 숨겨지는 것은 아니다. */
+
+            opacity: 0.3;
+        }
+
+        #container {
+            background-color: yellowgreen;
+
+            /* 요소의 너비 */
+            /*   기본 값 : 상위 요소의 컨텐츠 영역의 너비 100% */
+            width: 50%; /* 상위 요소의 컨텐츠 영역의 너비 50% */
+            width: 100px;
+
+            /* 요소의 높이 */
+            /*   기본 값 : 컨텐츠(내부 문자, 하위 요소)의 높이 */
+            height: 100px;
+            
+            /* 내부 여백 */
+            /*  = 컨텐츠 영역과 테두리 사이의 여백 */
+            padding: 20px;
+            /*  = 모든 방향에 20px 만큼의 여백을 설정 */
+            padding: 20px 50px;
+            /*  = 상하에 20px, 좌우 50px 만큼의 여백을 설정 */
+            padding: 10px 20px 30px 40px;
+            /*  = top 에서부터 시계 방향 순으로 설정 */
+
+            /* 내부 여백의 각 방향을 지정하여 설정이 가능하다. */
+            padding-top: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 30px;
+
+            /* 외부 여백 */
+            /*  = 테두리의 바깥 여백 */
+            /*  - 속성 값을 지정하는 방식은 padding과 동일 */
+            margin: 50px;
+
+            margin: 20px auto;
+            /* 좌우 여백을 'auto'로 설정할 경우 */
+            /* 좌우 전체 여백을 좌우에 동일한 값으로 설정 */
+            /*  = 상위 요소의 가로측 중앙에 위치하도록 할 수 있다. */
+
+            /* 내부 여백과 외부 여백의 속성 값으로 백분율은 잘 다루지 않는다. */
+            /*  = 상위 요소의 컨텐츠 '너비'를 기준 */
+
+        }
+        #container > div {
+            background-color: blueviolet;
+            width: 50%;
+            height: 50%;
+            /* 상위 요소인 #container 요소의 크기 반절만큼 설정 */
+
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h3 id="display">display 속성</h3>
+    <h1 id="header1">Hello world!</h1>
+    <hr>
+    <h3>visibility</h3>
+    <h1 id="header2">Hellow world!</h1>
+    <hr>
+    <h3>opacity</h3>
+    <h1 id="header3">Hellow world!</h1>
+    <hr>
+    <div id="container">
+        <div>Box</div>
+    </div>
+</body>
+</html>

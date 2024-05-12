@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title> CSS - Selector</title>
+    <style>
+        /* #list1 요소 내의 첫번째 li 요소를 선택 */
+        #list1 > li.first {color: red;}
+
+        /* → 특정 요소를 선택하기 위해 class 속성을 주로 다룬다. */
+        /*   상황에 따라 class 속성을 조정하기는 한계가 있다. */
+        /*   상황/이벤트에 따라 요소를 선택할 수 있도록 */
+        /*   가상의 클래스를 지원한다. */
+        #list1 > li:last-child { color: blueviolet; }
+        #list1 > li:nth-child(even) { background-color: #ccc;}
+        /* ---------------------------------------------------------------------- */
+        /* 가상 클래스 */
+        /*  - 요소의 이벤트에 대응하기 위해 만들어진 가상의 클래스 */
+        /*  - 가상 클래스 선택자는 선택자 앞에 콜론(:)이 붙는다. */
+
+        /* 반응 선택자 */
+        /*  - 사용자의 반응(마우스 포인터)으로 상태가 바뀌는 요소를 선택 */
+        /*  - 종류 */
+        /*          selector:active */
+        /*                : 사용자가 마우스 포인터로 클릭한 요소를 선택 */
+        /*          selector:hover  */
+        /*                : 사용자가 마우스 포인터를 올린 요소를 선택 */
+        #list2 > li:active {color: red;}
+        #list2 > li:hover {font-weight: bold;}
+
+        /* 상태 선택자 */
+        /*  - 입력 요소의 상태를 기준으로 선택 */
+        /*  - 종류 */
+        /*       selector:checked */
+        /*          : 체크된 요소를 선택 */
+        /*       selector:focus */
+        /*          : 초점이 맞춰진 요소를 선택 */
+        /*       selector:enabled */
+        /*          : 사용 가능한 요소를 선택 */
+        /*       selector:disabled */
+        /*          : 사용 불가능한 요소를 선택 */
+
+        /* 체크된 #check 요소의 다음 label 요소를 선택 */
+        #check:checked + label {color: red; font-weight: bold;}
+
+        input[type=text]:focus, 
+        input[type=password]:focus { outline-color: yellowgreen;}
+
+
+        /* 일반 구조 선택자 */
+        /*  - 형제 요소들 중에서 태그 상관 없이 */
+        /*    특정 위치에 있는 요소를 선택 */
+        /*  - 종류 */
+        /*       selector:first-child */
+        /*         : 형제 요소들 중 첫 번째에 위치한 요소 */
+        /*       selector:last-child */
+        /*         : 형제 요소들 중 마지막에 위치한 요소 */
+        /*       selector:nth-child(수열) */
+        /*         : 형제 요소들 중 수열에 위치한 요소 */
+        /*       selector:nth-last-child(수열) */
+        /*         : 형제 요소들 중 뒤에서 수열에 위치한 요소 */
+
+        /* .list-a 요소 내의 마지막 li 요소를 선택 */
+        .list-a > li:last-child { color: red;}
+        
+        /* .list-a 요소 내의 첫번째 li 요소를 선택 */
+        /*  = li 요소 이면서 첫 번째 형제인 요소를 선택 */
+        .list-a > li:first-child { color: blueviolet;}
+
+        /* list-a 요소 내의 세번째 li 요소를 선택 */
+        .list-a > li:nth-child(3) {color: orange;}
+
+        /* list-a 요소 내의 짝수 번째 li 요소를 선택 */
+        /*   2n = 2, 4, 6, 8 .... */
+        /* .list-a > li:nth-child(2n) {background-color: #ccc;} */
+        .list-a > li:nth-child(even) {background-color: #ccc;}
+        
+        /* list-a 요소 내의 홀수 번째 li 요소를 선택 */
+        /* .list-a > li:nth-child(2n+1) {background-color: #999;} */
+        .list-a > li:nth-child(odd) {background-color: #999;}
+        
+        /* 형태 구조 선택자 */
+        /*  - 형제 요소들 중에서 동일한 태그의 요소들 중 */
+        /*    특정 위치의 요소를 선택 */
+        /*  - 종류 */
+        /*      selector:first-of-type */
+        /*          : 형제 요소들 중 동일한 태그의 요소 중 첫 번째 요소 */
+        /*      selector:last-of-type */
+        /*          : 형제 요소들 중 동일한 태그의 요소 중 마지막 요소 */
+        /*      selector:nth-of-type(수열) */
+        /*          : 형제 요소들 중 동일한 태그의 요소 중 수열에 위치한 요소 */
+        /*      selector:nth-last-of-type(수열) */
+        /*          : 형제 요소들 중 동일한 태그의 요소 중 뒤에서 수열에 위치한 요소 */
+
+        /* 형제 요소들 중 마지막 li 요소 */
+        .list-b > li:last-of-type {color: red;}
+
+        /* 형제 요소들 중 첫 번째 li 요소 */
+        /*  = li 요소중 첫 번째 요소를 선택 */
+        .list-b > li:first-of-type {color: blueviolet;}
+
+        /* 형제 요소들 중 세 번째 li 요소 */
+        .list-b > li:nth-of-type(3) {color: orange;}
+
+        /* 형제 요소들 중 짝수 번째 li 요소 */
+        .list-b > li:nth-of-type(even) {background-color: #ccc;}
+        
+        /* 형제 요소들 중 홀수 번째 li 요소 */
+        .list-b > li:nth-of-type(odd) {background-color: #999;}
+
+
+        /* 링크 선택자 */
+        /*  - 링크 상태에 따른 선택자 */
+        /*  - 종류 */
+        /*      selector:link */
+        /*          : href 속성이 설정된 요소를 선택 */
+        /*      selector:visited */
+        /*          : href 속성이 설정되고 방문한 요소를 선택 */
+        a {font-weight: bold; text-decoration: none;}
+        a:link {font-style: italic;}
+        a:visited{color: orange;}
+
+        /* 부정 선택자 */
+        /*  - 지정된 선택자의 반대로 적용하기 위한 선택자 */
+        
+        /* 세 번째 li 요소를 선택 */
+        #list3 > li:nth-child(3) {color: red;}
+        /* 세 번째 li 요소를 제외한 li 요소를 선택 */
+        #list3 > li:not(:nth-child(3)) {color: blueviolet;}
+
+        /* 마지막 li 요소를 제외한 li 요소를 선택 */
+        #list3 > li:not(:last-child) {border-bottom: 1px solid black;}
+
+        /* 문자 선택자 */
+        /*  - 요소 내의 특정 문자를 선택 */
+        /*  - 종류 */
+        /*     selector::first-letter */
+        /*          : 첫 글자를 선택 */
+        /*     selector::first-line */
+        /*          : 브라우저 상의 첫 줄을 선택 */
+        #p1::first-letter {font-size: 2.2em; /* 2.2배 */
+        color: red;}
+
+        #p1::first-line{font-weight: bold;}
+
+        /* 반응 문자 선택자 */
+        /*  - 사용자가 문자와 반응하여 생기는 영역을 선택 */
+        #p1::selection{background-color: black; color: gold;}
+
+        /* 전후 문자 선택자 */
+        /*  - 요소 내의 전, 후에 위치한 공간을 선택 */
+        /*  - 컨텐츠(요소)를 추가하기 위한 선택자 */
+        /*  - content 속성이 필수 */
+        #p1::before{content: "Dummy Text : ";}
+        #p1::after{content: " - 2022.12.20"; font-style: italic;}
+        </style>
+</head>
+<body>
+    <ol id="list1">
+        <li class="first">Itam A</li>
+        <li>Itam B</li>
+        <li>Itam C</li>
+        <li>Itam D</li>
+        <li>Itam F</li>
+    </ol>
+    <!-- ----------------------------------------------------------------------- -->
+    <b>반응 선택자</b>
+    <ol id="list2">
+        <li>Itam A</li>
+        <li>Itam B</li>
+        <li>Itam C</li>
+        <li>Itam D</li>
+    </ol>
+    <hr>
+    <!-- ----------------------------------------------------------------------- -->
+    <b>상태 선택자</b>
+    <form action="./" method="post">
+        <input type="checkbox" id="check"><label for="check">ON/OFF</label>
+        <br>
+        <input type="text">
+        <br>
+        <input type="password">
+    </form>
+    <hr>
+    <!-- ----------------------------------------------------------------------- -->
+    <b>일반 구조 선택자</b>
+    <ol class="list-a">
+        <li>Itam A</li>
+        <li>Itam B</li>
+        <li>Itam C</li>
+        <li>Itam D</li>
+        <li>Itam E</li>
+    </ol>
+    <ol class="list-a">
+        <strong>Group A</strong>
+        <li>Itam A</li>
+        <li>Itam B</li>
+        <li>Itam C</li>
+        <strong>Group B</strong>
+        <li>Itam D</li>
+        <li>Itam E</li>
+    </ol>
+    <hr>
+    <!-- ---------------------------------------------------------------------- -->
+    <b>형태 구조 선택자</b>
+    <ol class="list-b">
+        <li>Itam A</li>
+        <li>Itam B</li>
+        <li>Itam C</li>
+        <li>Itam D</li>
+        <li>Itam E</li>
+    </ol>
+    <ol class="list-b">
+        <strong>Group A</strong>
+        <li>Itam A</li>
+        <li>Itam B</li>
+        <li>Itam C</li>
+        <strong>Group B</strong>
+        <li>Itam D</li>
+        <li>Itam E</li>
+    </ol>
+    <hr>
+    <!-- -------------------------------------------------------------------- -->
+    <b>링크 선택자</b>
+    <p>
+        <a>No Link</a> <br>
+        <a href="http://www.daum.net">Daum</a> <br>
+        <a href="http://www.naver.com">Naver</a> <br>
+    </p>
+    <hr>
+    <!-- -------------------------------------------------------------------- -->
+    <b>부정 선택자</b>
+    <ol id="list3">
+        <li>Itam A</li>
+        <li>Itam B</li>
+        <li>Itam C</li>
+        <li>Itam D</li>
+        <li>Itam E</li>
+    </ol>
+    <hr>
+    <!-- -------------------------------------------------------------------- -->
+    <b>문자 선택자 <br>& 반응 문자 선택자 <br>& 전후 문자 선택자</b>
+    <p id="p1">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+        dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+        book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
+        unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+        recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+    </p>
+</body>
+</html>

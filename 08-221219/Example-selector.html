@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Example01 - Selector</title>
+    <style>
+        /* #lecture-course strong {color: blue;} */
+        #lecture-course > li > strong {color: blue;}
+
+        #lecture-course ul {
+            /* CSS 특성 중 상속 */
+            /*  - 하위 요소가 상위 요소의 속성 값을 */
+            /*    동일하게 사용하는 것 */
+            /*  - 글자 관련 속성(color, ...)은 기본적으로 */
+            /*    상위 요소의 속성 값을 상속 받는다. */
+            color: blueviolet;}
+        #lecture-course > .lecture-select {color: red;}
+        #lecture-course > .lecture-select > strong {color: red;}
+        
+        /* 동일한 CSS 블록이라면 하나의 CSS 블록으로 처리 */
+        #lecture-course > .lecture-select,
+        #lecture-course > .lecture-select > strong
+        {color: orange;}
+        /* 다른 CSS 블록에서 동일한 속성 값을 사용해야 하는 경우 */
+        /* 상속을 활용하여 상위 요소의 속성을 따라가도록 한다. */
+        #lecture-course > .lecture-select {
+            color:cyan;
+            /* ........ */
+        }
+        #lecture-course > .lecture-select > strong {
+            /* color: red; */
+            /* 상위 요소인 .lecture-select 요소의 */
+            /* 글자 색상과 동일한 색으로 설정 */
+            /*  → 속성 값을 'inherit' 을 통해 상속을 받는다. */
+            color: inherit;
+        }
+
+            
+    </style>
+</head>
+<body>
+    <h2>Web Publishing</h2>
+    <ul id="lecture-course">
+        <!-- HTML 항목 -->
+        <li class="lecture-select">
+            <strong>HTML</strong>
+            <!-- HTML 의 하위 목록 -->
+        <ul>
+            <li>Tutirial</li>
+            <li>Example</li>
+            <li>Reference</li>
+        </ul>
+        </li>
+        <!-- CSS 항목 -->
+        <li>
+            <strong>CSS</strong>
+            <!-- CSS 의 하위 목록 -->
+        <ul>
+            <li>Tutirial</li>
+            <li>Example</li>
+            <li>Reference</li>
+        </ul>
+        </li>
+        <!-- JavaScript 항목 -->
+        <li>
+            <strong>JavaScript</strong>
+            <!-- JavaScript 의 하위 목록 -->
+        <ul>
+            <li>Tutirial</li> 
+            <li>Example</li>
+            <li>Reference</li>
+        </ul>
+        </li>
+        <!-- jQuery 항목 -->
+        <li>
+            <strong>jQuery</strong>
+            <!-- jQuery 의 하위 목록 -->
+        <ul>
+            <li>Tutirial</li>
+            <li>Example</li>
+            <li>Reference</li>
+        </ul>
+        </li>
+    </ul>
+    
+</body>
+</html>

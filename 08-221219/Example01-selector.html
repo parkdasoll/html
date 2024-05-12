@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Example01 - selector</title>
+    <style>
+        /* class 속성의 값이 'lecture-course' 인 요소를 선택 */
+        .lecture-course {color: green;}
+        /* class 속성의 값이 'lecture-selector' 인 요소를 선택 */
+        .lecture-selector {color: red;}
+    </style>
+</head>
+<body>
+    <h2>SBS 아카데미 교육 과정</h2>
+    <ul>
+        <!-- 웹 퍼블리싱 과정 항목 -->
+        <li>
+            <b class="lecture-course">웹 퍼블리싱 과정</b></li>
+        <ol>
+            <li class="lecture-selector">HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>jQuery</li>
+        </ol>
+        <!-- 프로그래밍 과정 항목 -->
+        <li>
+            <b class="lecture-course">프로그래밍 과정</b></li>
+        <ol>
+            <li>C</li>
+            <li>C++</li>
+            <li>Java</li>
+            <li class="lecture-selector">Python</li>
+            <li>Android</li>
+        </ol>
+
+    </ul>
+</body>
+</html>

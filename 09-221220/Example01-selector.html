@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Example01 - Selector</title>
+    <style>
+        #table > tr:nth-child(odd) {background-color: darkkhaki;}
+        #table > tr:hover {background-color: gray;}
+    </style>
+</head>
+<body>
+    <h1>SBS 아카데미 웹 퍼블리싱 수강 여부</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>HTML</th>
+                <th>CSS</th>
+                <th>JavaScript</th>
+                <th>jQuery</th>
+            </tr>
+        </thead>
+        <tbody id="table">
+            <tr>
+                <td>김철수</td>
+                <td>O</td>
+                <td>O</td>
+                <td>X</td>
+                <td>X</td>
+            </tr>
+            <tr>
+                <td>이영희</td>
+                <td>O</td>
+                <td>O</td>
+                <td>O</td>
+                <td>O</td>
+            </tr>
+            <tr>
+                <td>홍길동</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
