@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML - Tag</title>
+    </head>
+
+    <body>
+        <!-- 목록 태그(List Tag) -->
+        <!-- 컨텐츠를 목록화하여 정리하기 위한 태그-->
+        <!--  - 카테고리, 네비게이션 메뉴, 사이드 바 메뉴 등에 많이 사용된다. -->
+        <!-- 순서가 없는 목록과 순서가 있는 목록으로 구성된다. -->
+
+        <h3>Unordered List</h3>
+        <!-- 순서가 없는 목록 -->
+        <!--  - 마커는 기본적으로 검은 원으로 표시된다. -->
+        <ul>
+            <!-- 목록의 첫 번째 항목(List Itam) -->
+            <li>List Itam A</li>
+            <li>List Itam B</li>
+            <li>List Itam C</li>
+            <li>List Itam D</li>
+        </ul>
+
+        <hr>
+
+        <h3>ordered List</h3>
+        <!-- 순서가 있는 목록 -->
+        <!--  - 마커는 기본적으로 숫자로 표시 -->
+        <ol>
+            <li>List Item A</li>
+            <li>List Item B</li>
+            <li>List Item C</li>
+            <li>List Item D</li>
+        </ol>
+
+        <hr>
+
+        <h3>Overlapped List</h3>
+        <!-- 중첩 목록 -->
+        <!--  - 목록의 항목으로 하위 목록을 구성한 형태 -->
+
+        <!-- 상위 목록 -->
+        <ul>
+            <li>
+                HTML5
+                <!-- 첫 번째 항목의 하위 목록 -->
+                <ol>
+                    <li>HTML Tutorial</li>
+                    <li>HTML Reference</li>
+                    <li>HTML Examples</li>
+                </ol>
+            </li>
+
+            <!-- 두 번째 항목 -->
+            <li>
+                CSS3
+                <!-- 두 번째 항목의 하위 목록-->
+                <ul>
+                    <li>CSS3 Tutorial</li>
+                    <li>CSS3 Reference</li>
+                    <li>CSS3 Examples</li>
+
+                </ul>
+            </li>
+        </ul>
+    </body>
+</html>
