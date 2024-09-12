@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bubble</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        body{height: 2400px;}
+        .bubbles > div{ 
+            width: 7vw;
+            height: 7vw;
+            border-radius: 50%;
+            animation: bubbleUp 15s linear infinite;
+
+        }
+
+        .bubbles{
+            display: flex;
+            justify-content: space-around;
+            z-index: -9999;
+        }
+        .bubbles > .sky{background-color: rgb(165, 225, 240);}
+        .bubbles > .yellow{background-color: rgb(255, 255, 188);}
+        .bubbles > .purple{background-color: rgb(156, 86, 156);}
+        .bubbles > .green{background-color: rgb(138, 196, 138);}
+        .bubbles > .pink{background-color: rgb(248, 185, 195);}
+
+        @keyframes bubbleUp {
+            0% {
+                opacity: 0;
+                transform: translateY(2400px) scale(.4);
+            }
+            75%{opacity: 0.7;}
+            100%{
+                opacity: 0.1;
+                transform: translateY(1.2);
+            }
+        }
+
+        .bubbles > .b1{ animation-duration: 10s;}
+        .bubbles > .b2{ animation-duration: 6s;}
+        .bubbles > .b3{ animation-duration: 8s;}
+        .bubbles > .b4{ animation-duration: 7;}
+        .bubbles > .b5{ animation-duration: 4s;}
+
+    </style>
+</head>
+<body>
+    <div class="bubbles">
+        <div class="yellow b1"></div>
+        <div class="green b4"></div>
+        <div class="sky b5"></div>
+        <div class="purple b2"></div>
+        <div class="yellow b3"></div>
+        <div class="pink b1"></div>
+        <div class="purple b4"></div>
+        <div class="yellow b5"></div>
+        <div class="sky b3"></div>
+        <div class="green b2"></div>
+        <div class="pink b5"></div>
+        <div class="yellow b4"></div>
+        <div class="sky b1"></div>
+    </div>
+</body>
+</html>
